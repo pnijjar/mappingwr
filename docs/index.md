@@ -5,7 +5,7 @@ Mapping Waterloo Region Map
 <div id="map-searchbar"></div>
 <div id="map"></div>
 
-<p>That was the map! 02</p>
+<p>That was the map! 04</p>
 
 <script src="{{ site.baseurl }}/assets/js/leaflet.js"></script>
 <script src="{{ site.baseurl }}/assets/js/leaflet-search.min.js"></script>
