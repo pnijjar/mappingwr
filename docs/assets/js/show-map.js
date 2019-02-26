@@ -18,16 +18,16 @@ var searchControl = new L.Control.Search({
     propertyName: 'display_name',
     autoCollapse: false,
     marker: {
-      icon: L.icon.default ({ 
+      icon: L.Icon.Default { 
         imagePath: 'assets/images',
-      }),
+      }
     },
     collapsed: false,
     autoType: false,
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v09",
+    textPlaceholder: "Search by address v10",
     minLength: 3
 });
 
