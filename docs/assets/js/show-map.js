@@ -18,9 +18,9 @@ var searchControl = new L.Control.Search({
     propertyName: 'display_name',
     autoCollapse: false,
     marker: {
-      icon: L.icon { 
+      icon: L.icon ({ 
         iconUrl: '/assets/images/marker-icon.png',
-      },
+      }),
     },
     collapsed: false,
     autoType: false,
