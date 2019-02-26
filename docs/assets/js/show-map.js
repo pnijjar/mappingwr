@@ -43,7 +43,9 @@ var searchControl = new L.Control.Search({
     propertyLoc: ['lat','lon'],
     propertyName: 'display_name',
     autoCollapse: false,
-    marker.icon: new L.Icon.Default(), 
+    marker: { 
+      icon: new L.Icon.Default(), 
+    },
     collapsed: false,
     autoType: false,
     container: 'map-searchbar',
