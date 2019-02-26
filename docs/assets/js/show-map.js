@@ -18,6 +18,7 @@ var searchControl = new L.Control.Search({
     propertyName: 'display_name',
     autoCollapse: false,
     marker: {
+      [0,0],
       icon: L.icon ({ 
         iconUrl: '/assets/images/marker-icon.png',
       }),
@@ -27,7 +28,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v05",
+    textPlaceholder: "Search by address v07",
     minLength: 3
 });
 
