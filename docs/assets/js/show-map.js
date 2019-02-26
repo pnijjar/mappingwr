@@ -18,7 +18,7 @@ var searchControl = new L.Control.Search({
     propertyName: 'display_name',
     autoCollapse: false,
     marker: {
-      icon: L.Icon.Default ({ 
+      icon: L.icon.default ({ 
         imagePath: 'assets/images',
       }),
     },
