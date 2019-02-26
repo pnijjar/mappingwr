@@ -27,7 +27,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v07",
+    textPlaceholder: "Search by address v08",
     minLength: 3
 });
 
