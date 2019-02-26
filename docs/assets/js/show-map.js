@@ -17,11 +17,6 @@ var searchControl = new L.Control.Search({
     propertyLoc: ['lat','lon'],
     propertyName: 'display_name',
     autoCollapse: false,
-    marker: {
-      icon: L.Icon.Default { 
-        imagePath: 'assets/images'
-      }
-    },
     collapsed: false,
     autoType: false,
     container: 'map-searchbar',
