@@ -18,7 +18,7 @@ var searchControl = new L.Control.Search({
     propertyName: 'display_name',
     autoCollapse: false,
     marker: { 
-      icon: new L.Icon.Default(), 
+      icon: L.Icon.Default, 
     },
     collapsed: false,
     autoType: false,
