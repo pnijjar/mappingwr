@@ -51,14 +51,14 @@ $.getJSON("./assets/data/WardBoundaries.geojson", function(data) {
         jsonpParam: 'json_callback',
         propertyLoc: ['lat','lon'],
         propertyName: 'display_name',
-        marker.icon: L.Icon.Default(),
+        marker.icon: L.Icon.Default,
         autoCollapse: false,
         collapsed: false,
         autoType: false,
         container: 'map-searchbar',
         zoom: 15,
         firstTipSubmit: true,
-        textPlaceholder: "Search by address v01",
+        textPlaceholder: "Search by address v02",
         minLength: 3
     });
 
