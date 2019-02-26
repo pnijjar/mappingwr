@@ -51,7 +51,7 @@ $.getJSON("./assets/data/WardBoundaries.geojson", function(data) {
         jsonpParam: 'json_callback',
         propertyLoc: ['lat','lon'],
         propertyName: 'display_name',
-        marker: false,
+        marker: true,
         autoCollapse: false,
         collapsed: false,
         autoType: false,
@@ -77,7 +77,7 @@ $.getJSON("./assets/data/WardBoundaries.geojson", function(data) {
     });
 
     map.addLayer(baseLayer);
-    map.addLayer(geojson);
+    // map.addLayer(geojson);
 
     map.addControl(searchControl);
 });
