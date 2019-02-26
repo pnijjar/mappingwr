@@ -51,7 +51,6 @@ $.getJSON("./assets/data/WardBoundaries.geojson", function(data) {
         jsonpParam: 'json_callback',
         propertyLoc: ['lat','lon'],
         propertyName: 'display_name',
-        marker: false,
         autoCollapse: false,
         collapsed: false,
         autoType: false,
