@@ -43,12 +43,13 @@ var searchControl = new L.Control.Search({
     propertyLoc: ['lat','lon'],
     propertyName: 'display_name',
     autoCollapse: false,
+    marker.icon: new L.Icon.Default(), 
     collapsed: false,
     autoType: false,
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v02",
+    textPlaceholder: "Search by address v03",
     minLength: 3
 });
 
