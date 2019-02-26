@@ -20,7 +20,7 @@ var searchControl = new L.Control.Search({
     marker: {
       icon: L.Icon.Default { 
         imagePath: 'assets/images'
-      },
+      }
     },
     collapsed: false,
     autoType: false,
