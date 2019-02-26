@@ -37,6 +37,24 @@ var baseLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.
     { attribution: attrib });     //base layer
 
 
+var searchControl = new L.Control.Search({
+    url: 'https://nominatim.openstreetmap.org/search?format=json&countrycodes=ca&viewbox=-80.7907,43.2281,-80.0834,43.6032&bounded=1&q={s}',
+    jsonpParam: 'json_callback',
+    propertyLoc: ['lat','lon'],
+    propertyName: 'display_name',
+    autoCollapse: false,
+    collapsed: false,
+    autoType: false,
+    container: 'map-searchbar',
+    zoom: 15,
+    firstTipSubmit: true,
+    textPlaceholder: "Search by address v02",
+    minLength: 3
+});
+
+map.addLayer(baseLayer);
+map.addControl(searchControl);
+
 $.getJSON("./assets/data/WardBoundaries.geojson", function(data) {
     var geojson = L.geoJson(data, {
       onEachFeature: onEachFeature
@@ -44,23 +62,6 @@ $.getJSON("./assets/data/WardBoundaries.geojson", function(data) {
 
     geojsonLayer = geojson;
 
-    // I am doing all of this code inside so that the geojsonLayer
-    // variable will be accessible.
-    var searchControl = new L.Control.Search({
-        url: 'https://nominatim.openstreetmap.org/search?format=json&countrycodes=ca&viewbox=-80.7907,43.2281,-80.0834,43.6032&bounded=1&q={s}',
-        jsonpParam: 'json_callback',
-        propertyLoc: ['lat','lon'],
-        propertyName: 'display_name',
-        marker.icon: 'L.Icon.Default',
-        autoCollapse: false,
-        collapsed: false,
-        autoType: false,
-        container: 'map-searchbar',
-        zoom: 15,
-        firstTipSubmit: true,
-        textPlaceholder: "Search by address v02",
-        minLength: 3
-    });
 
     searchControl.on('search:locationfound', function(e) {
         // Use Mapbox Leaflet PIP (point in polygon) library.
@@ -76,9 +77,7 @@ $.getJSON("./assets/data/WardBoundaries.geojson", function(data) {
 
     });
 
-    map.addLayer(baseLayer);
     // map.addLayer(geojson);
 
-    map.addControl(searchControl);
 });
 
