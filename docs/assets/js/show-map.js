@@ -15,6 +15,7 @@ var collisionLayer = null;
 $.getJSON(
   "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
   function(data) { 
+      console.log(data);
       collisionLayer = L.geoJson(data)
       });
 
@@ -30,7 +31,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v12",
+    textPlaceholder: "Search by address v14",
     minLength: 3
 });
 
