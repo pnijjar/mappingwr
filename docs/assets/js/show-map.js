@@ -10,13 +10,16 @@ var map = new L.Map('map', {
 var baseLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     { attribution: attrib });     //base layer
 
+map.addLayer(baseLayer);
+
 var collisionLayer = null;
 
 $.getJSON(
   "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
   function(data) { 
       console.log(data);
-      collisionLayer = L.geoJson(data)
+        // collisionLayer = 
+        L.geoJson(data).addTo(map);
       });
 
 
@@ -35,7 +38,6 @@ var searchControl = new L.Control.Search({
     minLength: 3
 });
 
-map.addLayer(baseLayer);
-map.addLayer(collisionLayer);
+//map.addLayer(collisionLayer);
 map.addControl(searchControl);
 
