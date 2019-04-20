@@ -16,7 +16,7 @@ function onEachFeature(feature, layer) {
         if (feature.properties["HYPERLINK"]
            && feature.properties["COMMON_LOCATION_REFERENCE"]) { 
              layer.bindPopup(getPopupText(feature));
-             console.log(getPopupText(feature));
+             // console.log(getPopupText(feature));
         }
     }
 } // end onEachFeature
@@ -79,7 +79,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v19",
+    textPlaceholder: "Search by address v20",
     minLength: 3
 });
 
