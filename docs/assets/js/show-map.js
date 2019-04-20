@@ -33,7 +33,8 @@ var geojsonMarkerOptions = {
 
 function pointToLayer(feature, latlng) { 
     //return L.circleMarker(latlng, geojsonMarkerOptions);
-    return L.marker(latlng);
+    var markerIcon = L.divIcon({className: "marker"});
+    return L.marker(latlng, { icon: markerIcon });
 } 
 
 
@@ -78,7 +79,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v18",
+    textPlaceholder: "Search by address v19",
     minLength: 3
 });
 
