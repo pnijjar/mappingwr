@@ -31,9 +31,9 @@ map.addLayer(baseLayer);
 var collisionLayer = null;
 
 var pointStyle = {
-  "color": "0000ff";
-  "weight": 1;
-}
+  "color": "0000ff",
+  "weight": 1 
+};
 
 // https://leafletjs.com/examples/geojson/
 var geojsonMarkerOptions = {
