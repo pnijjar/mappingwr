@@ -56,8 +56,11 @@ var pointStyle = {
 $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
-        pointToLayer: pointToLayer;
-      }).addTo(map);
+      var geojson = L.geoJson(data, {
+          pointToLayer: pointToLayer;
+      });
+      map.addLayer(geojson);
+  })
 
 
 var searchControl = new L.Control.Search({
