@@ -16,6 +16,20 @@ function onEachFeature(feature, layer) {
 
 }
 
+// https://leafletjs.com/examples/geojson/
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+function pointToLayer(feature, latlng) { 
+    return L.circleMarker(latlng, geojsonMarkerOptions);
+} 
+
 
 var map = new L.Map('map', {
     zoom: 10,
@@ -31,19 +45,10 @@ map.addLayer(baseLayer);
 var collisionLayer = null;
 
 var pointStyle = {
-  "color": "0000ff",
-  "weight": 1 
+    "color": "0000ff",
+    "weight": 1 
 };
 
-// https://leafletjs.com/examples/geojson/
-var geojsonMarkerOptions = {
-        radius: 8,
-        fillColor: "#ff7800",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-};
 
 
 
@@ -51,9 +56,7 @@ var geojsonMarkerOptions = {
 $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
-        pointToLayer: function (feature, latlng) { 
-          return L.circleMarker(latlng, geojsonMarkerOptions);
-        }
+        pointToLayer: pointToLayer;
         map.addLayer(geojson);
       });
 
