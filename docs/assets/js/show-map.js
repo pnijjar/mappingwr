@@ -57,7 +57,7 @@ $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
       var geojson = L.geoJson(data, {
-          pointToLayer: pointToLayer;
+          pointToLayer: pointToLayer
       });
       map.addLayer(geojson);
   })
