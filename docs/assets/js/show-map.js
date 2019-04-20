@@ -32,7 +32,8 @@ var geojsonMarkerOptions = {
 };
 
 function pointToLayer(feature, latlng) { 
-    return L.circleMarker(latlng, geojsonMarkerOptions);
+    //return L.circleMarker(latlng, geojsonMarkerOptions);
+    return L.marker(latlng);
 } 
 
 
@@ -59,7 +60,7 @@ $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
       var geojson = L.geoJson(data, {
-          //pointToLayer: pointToLayer,
+          pointToLayer: pointToLayer,
           onEachFeature: onEachFeature
       });
       map.addLayer(geojson);
@@ -77,7 +78,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v17",
+    textPlaceholder: "Search by address v18",
     minLength: 3
 });
 
