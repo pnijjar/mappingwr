@@ -57,8 +57,7 @@ $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
         pointToLayer: pointToLayer;
-        map.addLayer(geojson);
-      });
+      }).addTo(map);
 
 
 var searchControl = new L.Control.Search({
