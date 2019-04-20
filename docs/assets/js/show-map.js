@@ -12,6 +12,7 @@ function getPopupText(feature) {
 
 function onEachFeature(feature, layer) {
     if (feature.properties) {
+        // How is this going to generalize to other entities??
         if (feature.properties["HYPERLINK"]
            && feature.properties["COMMON_LOCATION_REFERENCE"]) { 
              layer.bindPopup(getPopupText(feature));
@@ -54,14 +55,11 @@ var pointStyle = {
 };
 
 
-
-
-
 $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
       var geojson = L.geoJson(data, {
-          pointToLayer: pointToLayer,
+          //pointToLayer: pointToLayer,
           onEachFeature: onEachFeature
       });
       map.addLayer(geojson);
