@@ -1,20 +1,22 @@
 
 var attrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
 
+function getPopupText(feature) { 
+    return '<a href="' 
+      + feature.properties["HYPERLINK"]
+      + '>'
+      + feature.properties["COMMON_LOCATION_REFERENCE"]
+      + '</a>';
+} 
 
 function onEachFeature(feature, layer) {
     if (feature.properties) {
-
-        layer.setStyle({
-            color: feature.properties["stroke"],
-            fillColor: feature.properties["fill"],
-            fillOpacity: feature.properties["fill-opacity"],
-            weight: feature.properties["stroke-width"],
-            opacity: feature.properties["opacity"]
-        });
+        if (feature.properties["HYPERLINK"]
+           && feature.properties["COMMON_LOCATION_REFERENCE"]) { 
+             layer.bindPopup(getPopupText(feature));
+        }
     }
-
-}
+} // end onEachFeature
 
 // https://leafletjs.com/examples/geojson/
 var geojsonMarkerOptions = {
@@ -57,7 +59,8 @@ $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
       var geojson = L.geoJson(data, {
-          pointToLayer: pointToLayer
+          pointToLayer: pointToLayer,
+          onEachFeature: onEachFeature
       });
       map.addLayer(geojson);
   })
