@@ -32,9 +32,9 @@ var geojsonMarkerOptions = {
 };
 
 function pointToLayer(feature, latlng) { 
-    //return L.circleMarker(latlng, geojsonMarkerOptions);
-    var markerIcon = L.divIcon({className: "marker"});
-    return L.marker(latlng, { icon: markerIcon });
+    return L.circleMarker(latlng, geojsonMarkerOptions);
+    // var markerIcon = L.divIcon({className: "marker"});
+    // return L.marker(latlng, { icon: markerIcon });
 } 
 
 
