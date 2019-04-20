@@ -15,7 +15,7 @@ map.addLayer(baseLayer);
 var collisionLayer = null;
 
 $.getJSON(
-  "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
+  "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
       console.log(data);
         // collisionLayer = 
