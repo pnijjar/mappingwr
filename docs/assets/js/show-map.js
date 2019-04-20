@@ -4,7 +4,7 @@ var attrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> 
 function getPopupText(feature) { 
     return '<a href="' 
       + feature.properties["HYPERLINK"]
-      + '>'
+      + '">'
       + feature.properties["COMMON_LOCATION_REFERENCE"]
       + '</a>';
 
@@ -79,7 +79,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v16",
+    textPlaceholder: "Search by address v17",
     minLength: 3
 });
 
