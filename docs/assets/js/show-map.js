@@ -26,6 +26,7 @@ function onEachFeature(feature, layer) {
              // console.log(getPopupText(feature));
         } else if (feature.properties["ACCIDENTDATE"]) { 
             layer.bindPopup(getPopupTextCollision(feature));
+            console.log(getPopupTextCollision(feature));
         }
     }
 } // end onEachFeature
@@ -93,7 +94,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v24",
+    textPlaceholder: "Search by address v25",
     minLength: 3
 });
 
