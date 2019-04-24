@@ -22,6 +22,7 @@ function onEachFeature(feature, layer) {
 } // end onEachFeature
 
 // https://leafletjs.com/examples/geojson/
+// This makes circles
 var geojsonMarkerOptions = {
     radius: 8,
     fillColor: "#ff7800",
@@ -61,7 +62,7 @@ $.getJSON(
   "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
       var geojson = L.geoJson(data, {
-          // pointToLayer: pointToLayer,
+          pointToLayer: pointToLayer,
           onEachFeature: onEachFeature
       });
       map.addLayer(geojson);
@@ -79,7 +80,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v21",
+    textPlaceholder: "Search by address v23",
     minLength: 3
 });
 
