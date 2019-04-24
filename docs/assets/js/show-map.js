@@ -10,6 +10,13 @@ function getPopupText(feature) {
 
 } 
 
+function getPopupTextCollision(feature) { 
+    return feature.properties["ACCIDENTDATE"]
+      + ": " 
+      + feature.proprties["COLLISION_TYPE"];
+}
+
+
 function onEachFeature(feature, layer) {
     if (feature.properties) {
         // How is this going to generalize to other entities??
@@ -17,6 +24,8 @@ function onEachFeature(feature, layer) {
            && feature.properties["COMMON_LOCATION_REFERENCE"]) { 
              layer.bindPopup(getPopupText(feature));
              // console.log(getPopupText(feature));
+        } else if (feature.properties["ACCIDENTDATE"]) { 
+            layer.bindPopup(getPopupTextCollision(feature));
         }
     }
 } // end onEachFeature
