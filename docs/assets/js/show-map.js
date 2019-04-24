@@ -13,7 +13,7 @@ function getPopupText(feature) {
 function getPopupTextCollision(feature) { 
     return feature.properties["ACCIDENTDATE"]
       + ": " 
-      + feature.proprties["COLLISION_TYPE"];
+      + feature.properties["COLLISION_TYPE"];
 }
 
 
@@ -94,7 +94,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v25",
+    textPlaceholder: "Search by address v26",
     minLength: 3
 });
 
