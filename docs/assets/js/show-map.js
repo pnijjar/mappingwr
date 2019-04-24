@@ -33,11 +33,13 @@ var geojsonMarkerOptions = {
 };
 
 function pointToLayer(feature, latlng) { 
-    return L.circleMarker(latlng, geojsonMarkerOptions);
+    var marker = L.circleMarker(latlng, geojsonMarkerOptions);
+    markerClusters.addLayer(marker);
     // var markerIcon = L.divIcon({className: "marker"});
     // return L.marker(latlng, { icon: markerIcon });
 } 
 
+var markerClusters = L.markerClusterGroup();
 
 var map = new L.Map('map', {
     zoom: 10,
@@ -85,5 +87,6 @@ var searchControl = new L.Control.Search({
 });
 
 //map.addLayer(collisionLayer);
+map.addLayer(markerClusters);
 map.addControl(searchControl);
 
