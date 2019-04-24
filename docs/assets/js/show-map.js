@@ -24,12 +24,14 @@ function onEachFeature(feature, layer) {
         if (feature.properties["HYPERLINK"]
            && feature.properties["COMMON_LOCATION_REFERENCE"]) { 
              layer.bindPopup(getPopupText(feature));
-        // console.log(getPopupText(feature));
+           // console.log(getPopupText(feature));
         } 
-        //else if (feature.properties["ACCIDENTDATE"]) { 
-        //    layer.bindPopup(getPopupTextCollision(feature));
-        //    console.log(getPopupTextCollision(feature));
-        //}
+        else if (feature.properties["ACCIDENTDATE"]) { 
+            layer.bindPopup(getPopupTextCollision(feature));
+            console.log(getPopupTextCollision(feature));
+        } else { 
+            layer.bindPopup("Some text goes here");
+        }
     }
 } // end onEachFeature
 
@@ -79,8 +81,9 @@ var pointStyle = {
 //  "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
 
 $.getJSON(
-  "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
+  //"https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
   // "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
+  "https://opendata.arcgis.com/datasets/22173b62320f41069914707ae53f610e_0.geojson",
   function(data) { 
       var geojson = L.geoJson(data, {
           pointToLayer: pointToLayer,
