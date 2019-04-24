@@ -79,8 +79,8 @@ var pointStyle = {
 //  "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
 
 $.getJSON(
+  "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
   function(data) { 
-      "https://opendata.arcgis.com/datasets/daeb44b4880140f88561840efe3ccfbe_0.geojson",
       var geojson = L.geoJson(data, {
           pointToLayer: pointToLayer,
           onEachFeature: onEachFeature
@@ -100,7 +100,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v28",
+    textPlaceholder: "Search by address v29",
     minLength: 3
 });
 
