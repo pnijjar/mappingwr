@@ -11,7 +11,8 @@ function getPopupText(feature) {
 } 
 
 function getPopupTextCollision(feature) { 
-    return feature.properties["ACCIDENTDATE"]
+    return '' 
+      + feature.properties["ACCIDENTDATE"]
       + ": " 
       + feature.properties["COLLISION_TYPE"];
 }
@@ -23,7 +24,7 @@ function onEachFeature(feature, layer) {
         if (feature.properties["HYPERLINK"]
            && feature.properties["COMMON_LOCATION_REFERENCE"]) { 
              layer.bindPopup(getPopupText(feature));
-             // console.log(getPopupText(feature));
+        // console.log(getPopupText(feature));
         } else if (feature.properties["ACCIDENTDATE"]) { 
             layer.bindPopup(getPopupTextCollision(feature));
             console.log(getPopupTextCollision(feature));
@@ -94,7 +95,7 @@ var searchControl = new L.Control.Search({
     container: 'map-searchbar',
     zoom: 15,
     firstTipSubmit: true,
-    textPlaceholder: "Search by address v26",
+    textPlaceholder: "Search by address v27",
     minLength: 3
 });
 
