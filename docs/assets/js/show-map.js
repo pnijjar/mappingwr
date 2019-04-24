@@ -79,8 +79,8 @@ var pointStyle = {
 //  "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
 
 $.getJSON(
+  "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
   function(data) { 
-     "https://opendata.arcgis.com/datasets/75fa68b17e5b421d9d881f987c2d43fc_0.geojson",
       var geojson = L.geoJson(data, {
           pointToLayer: pointToLayer,
           onEachFeature: onEachFeature
