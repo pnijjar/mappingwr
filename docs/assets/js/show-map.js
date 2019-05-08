@@ -26,8 +26,9 @@ function onEachFeature(feature, layer) {
            // console.log(getPopupText(feature));
         } 
         else if (feature.properties["ACCIDENTDATE"]) { 
-            layer.bindPopup(getPopupTextCollision(feature));
-            console.log(getPopupTextCollision(feature));
+            layer.bindPopup("Accident!");
+            // layer.bindPopup(getPopupTextCollision(feature));
+            // console.log(getPopupTextCollision(feature));
         } else { 
             layer.bindPopup("Some text goes here");
         }
